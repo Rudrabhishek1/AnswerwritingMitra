@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AnswerWritingMitra - AI Answer Evaluator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/heroicons@2.1.3/css/solid.min.css">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          typography: (theme) => ({
+            DEFAULT: {
+              css: {
+                h1: { color: theme('colors.gray.800'), fontWeight: '800' },
+                h2: { color: theme('colors.gray.700'), fontWeight: '700' },
+                h3: { color: theme('colors.gray.600'), fontWeight: '600' },
+                strong: { color: theme('colors.gray.800'), fontWeight: '700' },
+              }
+            },
+            invert: {
+              css: {
+                color: theme('colors.gray.300'),
+                h1: { color: theme('colors.gray.100') },
+                h2: { color: theme('colors.gray.200') },
+                h3: { color: theme('colors.gray.300') },
+                strong: { color: theme('colors.gray.100') },
+              }
+            }
+          })
+        }
+      }
+    }
+  </script>
+  <style>
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 8px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #4a5568; /* dark:gray-700 */
+        border-radius: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: #2d3748; /* dark:gray-800 */
+    }
+    html.light .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #cbd5e0; /* light:gray-400 */
+    }
+    html.light .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: #a0aec0; /* light:gray-500 */
+    }
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    .animate-fade-in-up {
+        animation: fadeInUp 0.7s ease-out forwards;
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.9.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^4.6.0",
+    "vite": "https://esm.sh/vite@^7.0.4"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="font-sans bg-gray-50 dark:bg-gray-900 dark:bg-gradient-to-tr dark:from-slate-900 dark:via-gray-900 dark:to-blue-900/20 antialiased">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
